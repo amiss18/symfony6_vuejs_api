@@ -14,12 +14,12 @@ use Symfony\Component\Validator\Constraints as Assert;
 #[ORM\Entity(repositoryClass: CategoryRepository::class)]
 class Category {
 
-    #[Groups(["category:r"])]
+    #[Groups(["category:r", "product:r"])]
     #[ORM\Id, ORM\GeneratedValue(strategy: 'AUTO')]
     #[ORM\Column(type: 'integer', unique: true)]
     private int $id;
 
-    #[Groups(["category:r", "category:w"])]
+    #[Groups(["category:r", "category:w", "product:r", "product:w"])]
     #[Assert\NotBlank]
     #[ORM\Column(nullable: false)]
     private ?string $name;
