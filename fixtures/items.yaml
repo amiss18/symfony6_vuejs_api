@@ -1,0 +1,17 @@
+App\Entity\Category:
+  category_1:
+    name: 'High tech'
+  category_2:
+    name: 'Fresh food'
+  category_3:
+    name: 'Crafts'
+  category_4:
+    name: 'Unknown'
+
+
+App\Entity\Product:
+  product_{1..20}:
+    category: '@category_*'
+    name: <sentence()>
+    price: <numberBetween(1, 20)>
+    description: <paragraph()>
